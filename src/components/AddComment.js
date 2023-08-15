@@ -42,12 +42,14 @@ function AddComment({ videoId, isOpen, onClose, handleInput }) {
 
           <DrawerBody>
             <FormControl isRequired={true}>
-              <FormLabel color={"green.500"}>user_id</FormLabel>
+              <FormLabel color={"green.500"}>
+                user_id (ambil dari 5 comment pertama)
+              </FormLabel>
               <Input
                 name="user_id"
                 value={form.user_id}
                 onChange={handleText}
-                placeholder="ambil dari comment sebelumnya, for example 64daf003a77c17ddad37f879"
+                defaultValue="64daf003a77c17ddad37f879"
                 color={"whiteAlpha.900"}
               />
             </FormControl>
