@@ -47,9 +47,8 @@ function AddComment({ videoId, isOpen, onClose, handleInput }) {
                 name="user_id"
                 value={form.user_id}
                 onChange={handleText}
-                placeholder="use whats on the comments like 6385da... "
+                placeholder="ambil dari comment sebelumnya, for example 64daf003a77c17ddad37f879"
                 color={"whiteAlpha.900"}
-                defaultValue={"64daf003a77c17ddad37f879"}
               />
             </FormControl>
             <FormControl isRequired={true}>
