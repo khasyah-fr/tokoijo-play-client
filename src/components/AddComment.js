@@ -13,7 +13,7 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 
-function InputComment({ videoId, isOpen, onClose, handleInput }) {
+function AddComment({ videoId, isOpen, onClose, handleInput }) {
   const btnRef = useRef();
 
   const [form, setForm] = useState({
@@ -38,7 +38,7 @@ function InputComment({ videoId, isOpen, onClose, handleInput }) {
         <DrawerOverlay />
         <DrawerContent bg={"blackAlpha.900"}>
           <DrawerCloseButton />
-          <DrawerHeader color={"green.500"}>Input your Comment</DrawerHeader>
+          <DrawerHeader color={"green.500"}>Add your Comment</DrawerHeader>
 
           <DrawerBody>
             <FormControl isRequired={true}>
@@ -49,6 +49,7 @@ function InputComment({ videoId, isOpen, onClose, handleInput }) {
                 onChange={handleText}
                 placeholder="use whats on the comments like 6385da... "
                 color={"whiteAlpha.900"}
+                defaultValue={"64daf003a77c17ddad37f879"}
               />
             </FormControl>
             <FormControl isRequired={true}>
@@ -57,7 +58,7 @@ function InputComment({ videoId, isOpen, onClose, handleInput }) {
                 name="message"
                 value={form.message}
                 onChange={handleText}
-                placeholder="Type here..."
+                placeholder="Masukkan komentarmu disini"
                 color={"whiteAlpha.900"}
               />
             </FormControl>
@@ -82,7 +83,7 @@ function InputComment({ videoId, isOpen, onClose, handleInput }) {
                 )
               }
             >
-              Input
+              Add
             </Button>
           </DrawerFooter>
         </DrawerContent>
@@ -91,4 +92,4 @@ function InputComment({ videoId, isOpen, onClose, handleInput }) {
   );
 }
 
-export default InputComment;
+export default AddComment;

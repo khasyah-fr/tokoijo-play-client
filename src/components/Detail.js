@@ -12,7 +12,6 @@ import {
   StackDivider,
   Box,
   useDisclosure,
-  Flex,
 } from "@chakra-ui/react";
 
 import { useNavigate, useParams } from "react-router-dom";
@@ -21,7 +20,7 @@ import useFetch from "../hooks/useFetch";
 import Product from "./Product";
 import Video from "./Video";
 import Comment from "./Comment";
-import InputComment from "./InputComment";
+import AddComment from "./AddComment";
 import useFetchArray from "../hooks/useFetchArray";
 
 function Detail() {
@@ -119,7 +118,12 @@ function Detail() {
           {!productsLoading &&
             productsData.map((data) => (
               <Box key={data._id}>
-                <Product title={data.title} price={data.price} url={data.url} />
+                <Product
+                  title={data.title}
+                  price={data.price}
+                  url={data.url}
+                  image={data.thumbnail}
+                />
               </Box>
             ))}
         </HStack>
@@ -155,10 +159,10 @@ function Detail() {
             bg={"green.500"}
             color={"whiteAlpha.900"}
           >
-            Input Comment
+            Add Comment
           </Button>
         </Center>
-        <InputComment
+        <AddComment
           videoId={id}
           handleInput={handleInputComment}
           isOpen={isOpen}
